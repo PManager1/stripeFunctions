@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Stripe Getting Started Form</title>
+
+ 
+</head>
+<body>
+
+  <p>  test card :  4242 4242 4242 4242</p>
+  <h1>Checkout</h1>
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="customButton">Purchase</button>
+
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_lj9eYRe5nlffycMFiDZmGxKF',
+    image: '/square-image.png',
+    token: function(token) {
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+
+  document.getElementById('customButton').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: 'Rush-n-Wash',
+      description: '1 Car Detail ($20.00)',
+      amount: 2000
+    });
+    e.preventDefault();
+  });
+</script>
+
+
+</body>
+</html>

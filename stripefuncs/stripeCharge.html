@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Stripe Getting Started Form</title>
+</head>
+
+<body>
+
+    <h1>stripe Charge</h1>
+
+
+
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<button id="customButton">Purchase</button>
+
+<script src="stripe_charge.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    
+    <script>
+
+    var stripe = require('stripe')('sk_test_vYbLAVlfXadiOiZAsOd4bNH7');
+
+    stripe.charges.create({
+        amount: 50000,
+        currency: "usd",
+        card: "tok_14hqhKC8YqEG4DZrPtTP5PsM", // obtained with Stripe.js
+        description: "Charge for test@example.com"
+    }, function(err, charge) {
+        // asynchronously called
+        console.log(' err= ', err);
+    });
+    
+    </script>
+
+
+</body>
+
+</html>
