@@ -4,7 +4,7 @@ var stripe = require("stripe")(
 
 stripe.customers.create({
     description: 'Customer for test@example.com',
-    card: "tok_14lqUPC8YqEG4DZrJEjcljd2" //
+    card: "tok_14lsYVC8YqEG4DZr9Io4OnrO", // obtained with Stripe.js
 }, function(err, customer) {
     console.log(' err 1= ', err);
     console.log(' customer= ', customer);
@@ -14,7 +14,7 @@ stripe.customers.create({
         email: "hola@mola.com",
         "description": "Updated description ",
         "email": "foo-customer@example.com",
-        "metadata": {'order_id': '6735', 'name': 'Raj'}, 
+        "metadata": {'order_id': '6735', 'fistname': 'Raj', 'lastname': 'Machod', 'mobile_number': '415-573-6448', 'password': 'password', 'credit_card': '111-22-333-4444','cvv': '222', 'expiration_mo': '03', 'expiration_year': '2003', 'promo_code': 'abiw238'} 
         // "name": "Raj"
         // metadata: {'order_id': '6735'}
 
